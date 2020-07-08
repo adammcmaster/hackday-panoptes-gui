@@ -1,0 +1,30 @@
+#:kivy 1.0
+
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            rows: 2
+            cols: 2
+            padding: 50
+            spacing: 50
+            Label:
+                text: "User name:"
+            TextInput:
+                id: username
+            Label:
+                text: "Password:"
+            TextInput:
+                id: password
+                password: True
+        Button:
+            text: "Log in"
+            id: login_button
+            on_press: root.login()
+
+<ProjectsScreen>:
+    on_pre_enter: root.load_projects()
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Projects"
